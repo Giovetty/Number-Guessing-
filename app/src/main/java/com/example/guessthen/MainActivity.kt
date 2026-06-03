@@ -5,6 +5,7 @@ import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -29,6 +30,10 @@ class MainActivity : AppCompatActivity() {
         displayButton?.setOnClickListener {
             var guess = inputNumber.text.toString().toInt()
 
+            Toast. makeText(this,
+                "Guessing number!", Toast.LENGTH_LONG).show()
+
+           //Added if statement to check the guess against the random number
             if (guess > randomNumber) {
                 displayMessage.text = "Too high!"
             } else {
